@@ -14,7 +14,7 @@ services:
     networks:
       mtrnet:
         ipv4_address: 172.20.0.3
-    tty: true  # Mantém o terminal interativo para testes
+    tty: true 
 
 networks:
   mtrnet:
