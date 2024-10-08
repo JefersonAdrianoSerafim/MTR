@@ -1,0 +1,24 @@
+version: 'latest'
+
+services:
+  server:
+    build: .
+    container_name: mtr_server
+    networks:
+      mtrnet:
+        ipv4_address: 172.20.0.2
+
+  client:
+    build: .
+    container_name: mtr_client
+    networks:
+      mtrnet:
+        ipv4_address: 172.20.0.3
+    tty: true  # Mantém o terminal interativo para testes
+
+networks:
+  mtrnet:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/24
